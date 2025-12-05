@@ -1,11 +1,302 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page exercice</title>
-</head>
-<body>
-    page exercice
-</body>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Mini projet Git – Parcours guidé</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Parcours guidé : Git pas à pas</h1>
+            <p class="subtitle">
+                Exercice complet pour apprendre à utiliser Git en local, puis avec GitHub.
+            </p>
+
+            <nav class="main-nav">
+                <a href="index.html">Page 1 : Quiz des commandes</a>
+                <a href="exercice.html" aria-current="page">Page 2 : Parcours guidé</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- EXERCICE 1 : GIT EN LOCAL -->
+            <section>
+                <h2>1. Exercice – Travailler en local avec Git</h2>
+                <p>
+                    L’objectif est de partir d’un projet vide, d’ajouter des fichiers,
+                    de créer plusieurs commits et d’explorer l’historique avec
+                    <code>git log</code>, <code>git checkout</code> et
+                    <code>git status</code>.
+                </p>
+
+                <ol class="steps-list">
+                    <!-- Étape 1 -->
+                    <li class="step">
+                        <h3 class="step-title">Étape 1 – Initialiser le projet</h3>
+                        <p>
+                            Crée un dossier pour le mini projet (par exemple
+                            <code>mini-projet-git</code>), puis ouvre un terminal dans ce dossier.
+                        </p>
+                        <div class="step-commands">
+                            <pre><code>mkdir mini-projet-git
+cd mini-projet-git
+git init
+git status</code></pre>
+                        </div>
+                        <p class="step-note">
+                            ➜ <strong>Objectif pédagogique :</strong> comprendre que
+                            <code>git init</code> crée un dépôt Git local et que
+                            <code>git status</code> montre l’état des fichiers.
+                        </p>
+                    </li>
+
+                    <!-- Étape 2 -->
+                    <li class="step">
+                        <h3 class="step-title">Étape 2 – Ajouter les premiers fichiers et faire un commit</h3>
+                        <p>
+                            Place dans ce dossier les fichiers de base du projet :
+                            <code>index.html</code>, <code>css/style.css</code>,
+                            <code>js/main.js</code>.
+                        </p>
+                        <p>
+                            Vérifie l’état, ajoute tous les fichiers, puis crée un premier commit.
+                        </p>
+                        <div class="step-commands">
+                            <pre><code>git status
+git add .
+git status
+git commit -m "Premier commit : structure de base (HTML/CSS/JS)"</code></pre>
+                        </div>
+                        <p class="step-note">
+                            ➜ <strong>Objectif pédagogique :</strong> voir la différence entre
+                            fichiers non suivis, suivis et stagés, puis créer un premier point
+                            de sauvegarde dans l’historique.
+                        </p>
+                    </li>
+
+                    <!-- Étape 3 -->
+                    <li class="step">
+                        <h3 class="step-title">
+                            Étape 3 – Modifier le projet et ajouter un nouveau fichier
+                        </h3>
+                        <p>
+                            Maintenant, ajoute du contenu dans <code>index.html</code>
+                            (par exemple un lien hypertexte vers une ressource Git) et/ou crée
+                            un nouveau fichier (par ex. <code>liens.html</code>).
+                        </p>
+                        <p>Ensuite, observe l’état du dépôt :</p>
+                        <div class="step-commands">
+                            <pre><code>git status</code></pre>
+                        </div>
+                        <p class="step-note">
+                            ➜ <strong>Objectif pédagogique :</strong> voir comment Git
+                            détecte les fichiers modifiés et les nouveaux fichiers.
+                        </p>
+                    </li>
+
+                    <!-- Étape 4 -->
+                    <li class="step">
+                        <h3 class="step-title">
+                            Étape 4 – Préparer et faire un deuxième commit
+                        </h3>
+                        <p>
+                            Ajoute les modifications dans la zone de préparation, puis crée
+                            un deuxième commit.
+                        </p>
+                        <div class="step-commands">
+                            <pre><code># Option 1 : tout ajouter
+git add .
+
+# Option 2 : seulement certains fichiers
+git add index.html
+git add liens.html
+
+git status
+git commit -m "Deuxième commit : ajout de contenu et d’un lien hypertexte"</code></pre>
+                        </div>
+                        <p class="step-note">
+                            ➜ <strong>Objectif pédagogique :</strong> montrer que
+                            <code>git add .</code> et <code>git add &lt;fichier&gt;</code>
+                            donnent le même résultat sur un petit projet, mais qu’il est
+                            possible de choisir précisément quoi commiter.
+                        </p>
+                    </li>
+
+                    <!-- Étape 5 -->
+                    <li class="step">
+                        <h3 class="step-title">
+                            Étape 5 – Explorer l’historique et voir un ancien commit
+                        </h3>
+                        <p>Affiche l’historique des commits :</p>
+                        <div class="step-commands">
+                            <pre><code>git log</code></pre>
+                        </div>
+                        <p>
+                            Repère le hash (identifiant) du premier commit, puis affiche ses
+                            détails ou bascule temporairement dessus :
+                        </p>
+                        <div class="step-commands">
+                            <pre><code># Voir les détails d’un commit précis
+git show &lt;hash_du_commit&gt;
+
+# Aller "voir" un ancien commit (mode lecture)
+git checkout &lt;hash_du_commit&gt;</code></pre>
+                        </div>
+                        <p class="step-note">
+                            ➜ <strong>Objectif pédagogique :</strong> comprendre que
+                            <code>git log</code> permet de naviguer dans l’historique et que
+                            <code>git checkout &lt;hash&gt;</code> permet de revoir le projet
+                            tel qu’il était à un moment donné.
+                        </p>
+                        <div class="tip">
+                            💡 Pour revenir à la dernière version sur ta branche principale :
+                            <pre><code>git checkout main    # ou master selon le nom de la branche</code></pre>
+                        </div>
+                    </li>
+
+                    <!-- Étape 6 -->
+                    <li class="step">
+                        <h3 class="step-title">
+                            Étape 6 – Jouer avec <code>git status</code>
+                        </h3>
+                        <p>
+                            Fais quelques modifications (ajoute un paragraphe, supprime une
+                            ligne, etc.), puis regarde plusieurs fois
+                            <code>git status</code> :
+                        </p>
+                        <div class="step-commands">
+                            <pre><code>git status
+git add index.html
+git status
+git commit -m "Troisième commit : petites améliorations de contenu"
+git status</code></pre>
+                        </div>
+                        <p class="step-note">
+                            ➜ <strong>Objectif pédagogique :</strong> voir le cycle complet
+                            “modifié → staged → commité” et comprendre que
+                            <code>git status</code> est ton meilleur ami pour savoir où tu en es.
+                        </p>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- EXERCICE 2 : GIT + GITHUB -->
+            <section>
+                <h2>2. Exercice – Connecter le projet à GitHub</h2>
+                <p>
+                    Maintenant qu’on a un historique local propre, on va envoyer ce projet sur
+                    GitHub pour qu’il soit clonable par les étudiants.
+                </p>
+
+                <ol class="steps-list">
+                    <!-- Étape 1 remote -->
+                    <li class="step">
+                        <h3 class="step-title">
+                            Étape 1 – Créer le dépôt distant sur GitHub
+                        </h3>
+                        <p>
+                            Connecte-toi à ton compte GitHub et crée un nouveau repository
+                            (par exemple <code>mini-projet-git</code>).
+                        </p>
+                        <ul>
+                            <li>Ne coche pas l’option “Initialize with a README” (pour éviter les conflits).</li>
+                            <li>Note l’URL HTTPS du dépôt, par ex. :
+                                <code>https://github.com/nom_utilisateur/mini-projet-git.git</code>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Étape 2 remote add -->
+                    <li class="step">
+                        <h3 class="step-title">
+                            Étape 2 – Lier le dépôt local au dépôt GitHub
+                        </h3>
+                        <p>
+                            Dans ton projet local (dans le dossier du mini projet), ajoute un
+                            <em>remote</em> nommé <code>origin</code> qui pointe vers GitHub :
+                        </p>
+                        <div class="step-commands">
+                            <pre><code>git remote add origin https://github.com/nom_utilisateur/mini-projet-git.git
+git remote -v</code></pre>
+                        </div>
+                        <p class="step-note">
+                            ➜ <strong>Objectif pédagogique :</strong> comprendre qu’un
+                            <em>remote</em> est simplement une adresse (URL) vers un serveur Git.
+                        </p>
+                    </li>
+
+                    <!-- Étape 3 push -->
+                    <li class="step">
+                        <h3 class="step-title">
+                            Étape 3 – Pousser le code sur GitHub
+                        </h3>
+                        <p>
+                            Assure-toi d’avoir au moins un commit local (ce qui est déjà le cas
+                            si tu as fait l’exercice 1), puis pousse la branche principale sur GitHub :
+                        </p>
+                        <div class="step-commands">
+                            <pre><code>git push -u origin main   # ou master si ta branche principale s'appelle master</code></pre>
+                        </div>
+                        <p class="step-note">
+                            ➜ <strong>Objectif pédagogique :</strong> voir la différence entre
+                            “local” et “distant” et comprendre que
+                            <code>git push</code> envoie les commits vers le serveur Git.
+                        </p>
+                    </li>
+
+                    <!-- Étape 4 pull -->
+                    <li class="step">
+                        <h3 class="step-title">
+                            Étape 4 – Tirer les modifications depuis GitHub
+                        </h3>
+                        <p>
+                            Plus tard, si quelqu’un (ou toi depuis un autre poste) modifie le
+                            projet sur GitHub, il faudra récupérer ces modifications :
+                        </p>
+                        <div class="step-commands">
+                            <pre><code>git pull origin main</code></pre>
+                        </div>
+                        <p class="step-note">
+                            ➜ <strong>Objectif pédagogique :</strong> comprendre que le code
+                            sur ta machine ne se met pas à jour tout seul : c’est toi qui
+                            décides quand tu synchronises avec <code>git pull</code>.
+                        </p>
+                        <div class="tip">
+                            ⚠️ En équipe, un <code>git pull</code> peut parfois créer des
+                            conflits si vous avez modifié les mêmes lignes. Ce sera l’objet
+                            d’un exercice séparé.
+                        </div>
+                    </li>
+
+                    <!-- Étape 5 clone -->
+                    <li class="step">
+                        <h3 class="step-title">
+                            Étape 5 – Faire cloner le projet par les étudiants
+                        </h3>
+                        <p>
+                            Pour tes étudiants, le point d’entrée sera le clonage : ils ne font
+                            pas <code>git init</code>, ils récupèrent directement le projet
+                            depuis GitHub.
+                        </p>
+                        <div class="step-commands">
+                            <pre><code>git clone https://github.com/nom_utilisateur/mini-projet-git.git</code></pre>
+                        </div>
+                        <p class="step-note">
+                            ➜ <strong>Objectif pédagogique :</strong> comprendre que
+                            <code>git clone</code> crée une copie complète du dépôt (code +
+                            historique) et configure automatiquement le remote
+                            <code>origin</code>.
+                        </p>
+                    </li>
+                </ol>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                Mini projet Git – Exercices interactifs pour découvrir Git et GitHub.
+            </p>
+        </footer>
+    </body>
 </html>
