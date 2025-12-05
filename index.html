@@ -1,12 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Mini projet Git</title>
+
+    <!-- Lien vers le CSS -->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Premier projet avec git</h1>
+    <header>
+      <h1>Mini projet : Découvrir Git</h1>
+      <p class="subtitle">
+        Un petit projet avec trois fichiers (HTML, CSS, JS) pour comprendre les
+        bases de Git.
+      </p>
+    </header>
+
+    <main>
+      <!-- SECTION 1 : Présentation -->
+      <section>
+        <h2>1. Objectif du projet</h2>
+        <p>Ce projet sert d’exemple minimal pour apprendre à utiliser Git :</p>
+        <ul>
+          <li>voir l’état des fichiers avec <code>git status</code></li>
+          <li>préparer les changements avec <code>git add</code></li>
+          <li>créer des versions avec <code>git commit</code></li>
+        </ul>
+        <p>
+          Le but est de faire plusieurs petits changements dans ce projet et de
+          les enregistrer dans l’historique avec des commits.
+        </p>
+      </section>
+
+      <!-- SECTION 2 : Exercice interactif sur les commandes -->
+      <section id="git-commands-section">
+        <h2>2. Exercice : Comprendre les commandes Git</h2>
+
+        <p>
+          Avant de cliquer sur les boutons, essayez d’expliquer vous-même à quoi
+          sert chaque commande. Ensuite, appuyez sur
+          <strong>« Afficher le rôle »</strong> pour vérifier.
+        </p>
+
+        <ul class="git-commands-list">
+          <li class="git-command">
+            <code>git init</code>
+            <p class="git-role" data-command="init" hidden></p>
+            <button class="show-role" data-command="init">
+              Afficher le rôle
+            </button>
+          </li>
+
+          <li class="git-command">
+            <code>git status</code>
+            <p class="git-role" data-command="status" hidden></p>
+            <button class="show-role" data-command="status">
+              Afficher le rôle
+            </button>
+          </li>
+
+          <li class="git-command">
+            <code>git add &lt;fichier&gt;</code>
+            <p class="git-role" data-command="add" hidden></p>
+            <button class="show-role" data-command="add">
+              Afficher le rôle
+            </button>
+          </li>
+
+          <li class="git-command">
+            <code>git commit -m "message"</code>
+            <p class="git-role" data-command="commit" hidden></p>
+            <button class="show-role" data-command="commit">
+              Afficher le rôle
+            </button>
+          </li>
+
+          <li class="git-command">
+            <code>git log</code>
+            <p class="git-role" data-command="log" hidden></p>
+            <button class="show-role" data-command="log">
+              Afficher le rôle
+            </button>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Mini projet Git – 3 fichiers : <code>index.html</code>,
+        <code>css/style.css</code>, <code>js/main.js</code>.
+      </p>
+    </footer>
+
+    <!-- Lien vers le JavaScript -->
+    <script src="js/main.js"></script>
   </body>
 </html>

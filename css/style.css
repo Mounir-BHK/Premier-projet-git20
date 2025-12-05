@@ -1,3 +1,217 @@
+/* -----------------------------
+   Style minimal pour le mini projet Git
+   ----------------------------- */
+
+:root {
+    --bg-color: #111827;
+    --card-bg: #1f2933;
+    --accent: #52265a;
+    --text-main: #f9fafb;
+    --text-muted: #9ca3af;
+    --border-radius: 2px;
+    --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-main);
+    background: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+main,
+footer {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+header {
+    text-align: center;
+    padding-top: 2rem;
+}
+
 h1 {
-    color: red;
+    margin-bottom: 0.3rem;
+}
+
+.subtitle {
+    margin-top: 0;
+    color: var(--text-muted);
+}
+
+section {
+    margin-top: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+}
+
+/* Liste de commandes Git */
+.git-commands-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+}
+
+/* Chaque ligne : commande | rôle | bouton */
+.git-command {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #374151;
+}
+
+.git-command:last-child {
+    border-bottom: none;
+}
+
+.git-command code {
+    font-size: 0.95rem;
+    min-width: 110px; /* largeur fixe pour aligner les commandes */
+}
+
+/* Texte du rôle : prend l’espace disponible au centre */
+.git-role {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    flex: 1;
+}
+
+/* Bouton pour révéler le rôle */
+button.show-role {
+    margin-top: 0.1rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 400;
+    background: var(--accent);
+    color: white;
+    font-size: 0.85rem;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.2s;
+}
+
+button.show-role:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+button.show-role:active {
+    transform: translateY(1px);
+    box-shadow: none;
+    opacity: 0.85;
+}
+
+.git-role {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    padding-bottom: 1.5rem;
+}
+
+/* ================================================== */
+
+/* Navigation principale entre les pages */
+.main-nav {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid #374151;
+    color: var(--text-muted);
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.main-nav a:hover {
+    background: #111827;
+    border-color: var(--accent);
+    color: var(--text-main);
+}
+
+.main-nav a[aria-current="page"] {
+    background: var(--accent);
+    color: #fff;
+    border-color: transparent;
+}
+
+/* Liste d'étapes d'exercice */
+.steps-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.step {
+    padding: 0.9rem 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #374151;
+    background-color: #111827;
+}
+
+.step-title {
+    margin: 0 0 0.4rem;
+    font-size: 1rem;
+}
+
+.step-commands {
+    margin: 0.5rem 0;
+}
+
+.step-commands pre {
+    margin: 0;
+    padding: 0.6rem 0.75rem;
+    background-color: #020617;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 0.85rem;
+}
+
+.step-note {
+    margin: 0.4rem 0 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Boîte d'astuce / attention */
+.tip {
+    margin-top: 0.6rem;
+    padding: 0.6rem 0.75rem;
+    border-radius: 4px;
+    background-color: #0b1120;
+    border: 1px dashed #4b5563;
+    font-size: 0.85rem;
 }
