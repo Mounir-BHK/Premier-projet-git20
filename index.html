@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <title>Mini projet Git</title>
 
+    <!-- Pour un meilleur rendu sur mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Lien vers le CSS -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -14,6 +17,11 @@
         Un petit projet avec trois fichiers (HTML, CSS, JS) pour comprendre les
         bases de Git.
       </p>
+
+      <nav class="main-nav">
+        <a href="index.html" aria-current="page">Page 1 : Quiz des commandes</a>
+        <a href="exercice.html">Page 2 : Parcours guidé</a>
+      </nav>
     </header>
 
     <main>
@@ -43,6 +51,7 @@
         </p>
 
         <ul class="git-commands-list">
+          <!-- git init -->
           <li class="git-command">
             <code>git init</code>
             <p class="git-role" data-command="init" hidden></p>
@@ -51,6 +60,7 @@
             </button>
           </li>
 
+          <!-- git status -->
           <li class="git-command">
             <code>git status</code>
             <p class="git-role" data-command="status" hidden></p>
@@ -59,6 +69,7 @@
             </button>
           </li>
 
+          <!-- git add -->
           <li class="git-command">
             <code>git add &lt;fichier&gt;</code>
             <p class="git-role" data-command="add" hidden></p>
@@ -67,6 +78,7 @@
             </button>
           </li>
 
+          <!-- git commit -->
           <li class="git-command">
             <code>git commit -m "message"</code>
             <p class="git-role" data-command="commit" hidden></p>
@@ -75,10 +87,38 @@
             </button>
           </li>
 
+          <!-- git log -->
           <li class="git-command">
             <code>git log</code>
             <p class="git-role" data-command="log" hidden></p>
             <button class="show-role" data-command="log">
+              Afficher le rôle
+            </button>
+          </li>
+
+          <!-- git checkout <hash_du_commit> -->
+          <li class="git-command">
+            <code>git checkout &lt;hash_du_commit&gt;</code>
+            <p class="git-role" data-command="checkout" hidden></p>
+            <button class="show-role" data-command="checkout">
+              Afficher le rôle
+            </button>
+          </li>
+
+          <!-- git reset --soft / --mixed / --hard -->
+          <li class="git-command">
+            <code>git reset --soft|--mixed|--hard &lt;hash_du_commit&gt;</code>
+            <p class="git-role" data-command="reset" hidden></p>
+            <button class="show-role" data-command="reset">
+              Afficher le rôle
+            </button>
+          </li>
+
+          <!-- Optionnel : git revert -->
+          <li class="git-command">
+            <code>git revert &lt;hash_du_commit&gt;</code>
+            <p class="git-role" data-command="revert" hidden></p>
+            <button class="show-role" data-command="revert">
               Afficher le rôle
             </button>
           </li>
@@ -88,8 +128,9 @@
 
     <footer>
       <p>
-        Mini projet Git – 3 fichiers : <code>index.html</code>,
-        <code>css/style.css</code>, <code>js/main.js</code>.
+        Mini projet Git – 3 fichiers :
+        <code>index.html</code>, <code>css/style.css</code>,
+        <code>js/main.js</code>.
       </p>
     </footer>
 
